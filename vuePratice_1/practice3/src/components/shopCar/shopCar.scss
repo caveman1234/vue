@@ -1,0 +1,39 @@
+.shopCar {
+    width: 990px;
+    margin: 0 auto;
+    .thead {
+        display: flex;
+        font-size: 12px;
+        color: #3c3c3c;
+        .check {
+            flex: 0 0 60px;
+            input {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+            label {
+                cursor: pointer;
+            }
+        }
+        .goods {
+            flex: 0 0 302px;
+        }
+        .hook {
+            flex: 0 0 192px;
+        }
+        .price {
+            flex: 0 0 120px;
+        }
+        .count {
+            flex: 0 0 120px;
+            text-align: center;
+        }
+        .total {
+            flex: 0 0 105px;
+            text-align: center;
+        }
+        .handle {
+            flex: 0 0 100px;
+        }
+    }
+}

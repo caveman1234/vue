@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pureVue</title>
+    <link rel="stylesheet" href="./js/element.css">
+
+</head>
+
+<body>
+    <div>不是vue控制范围</div>
+    <div id="app">
+        <div v-html="msg"></div>
+        <div>{{msg}}</div>
+        <el-button size="small" @click="func">btn</el-button>
+    </div>
+    <div id="app1">
+        <div>{{msg}}</div>
+        <el-button @click="func" size="small">app1-btn</el-button>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        try {
+            var a = 1
+            func()
+
+        } catch (e) {
+            console.log('catch', e)
+        } finally {
+            console.log('finaly');
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/element.js"></script>
+    <script src="./pureVue.js"></script>
+</body>
+
+</html>

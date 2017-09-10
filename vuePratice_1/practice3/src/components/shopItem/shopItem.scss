@@ -1,0 +1,128 @@
+.container {
+    padding-top: 30px;
+    .title {
+        font-size: 12px;
+        color: #3c3c3c;
+        .caoshi {
+            background: rgb(252, 0, 42) !important;
+            padding: 3px 5px 3px 5px;
+            border-radius: 2px;
+            color: white;
+        }
+        input {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+    .details {
+        margin-top: 10px;
+        .detailsContent {
+            display: flex;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 1px solid #eee;
+            border-left: 1px solid rgb(204, 204, 204);
+            border-right: 1px solid rgb(204, 204, 204);
+            background-color: rgb(252, 252, 252);
+            &:last-child {
+                border-bottom: 1px solid #eee;
+            }
+            .check {
+                flex: 0 0 45px;
+                text-align: center;
+                input {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+            .goods {
+                flex: 0 0 302px;
+                display: flex;
+                .img {
+                    flex: 0 0 80px;
+                    height: 80px;
+                    border: 1px solid #eee;
+                }
+                .text {
+                    flex: 1;
+                    padding-left: 10px;
+                    a {
+                        font-size: 12px;
+                        color: #3c3c3c;
+                        text-decoration: none;
+                        &:hover {
+                            color: #f60;
+                        }
+                    }
+                }
+            }
+            .hook {
+                flex: 0 0 192px;
+            }
+            .price {
+                flex: 0 0 120px;
+                font-size: 12px;
+                font-weight: 700;
+                color: #3c3c3c;
+                font-family: Verdana, Tahoma, arial;
+            }
+            .count {
+                text-align: center;
+                flex: 0 0 120px;
+                input {
+                    width: 40px;
+                }
+                span {
+                    cursor: pointer;
+                    &:first-child {
+                        padding-left: 21px;
+                    }
+                    &:last-child {
+                        padding-right: 19px;
+                    }
+                }
+                .bottom {
+                    font-size: 12px;
+                    color: #f60;
+                }
+            }
+            .total {
+                flex: 0 0 105px;
+                text-align: center;
+                .top {
+                    font-family: Verdana, Tahoma, arial;
+                    color: #f40;
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+                .bottom {
+                    color: rgb(156, 156, 156);
+                    font-size: 12px;
+                }
+            }
+            .handle {
+                flex: 0 0 100px;
+                text-align: left;
+                font-size: 12px;
+                color: #3c3c3c;
+                cursor: pointer;
+                div {
+                    &:hover {
+                        color: rgb(255, 68, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fff0e7 {
+    background: #fff0e7;
+    border: 1px solid #ffe1d3;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+
+.backColor {
+    background: rgb(255, 248, 225) !important;
+}
