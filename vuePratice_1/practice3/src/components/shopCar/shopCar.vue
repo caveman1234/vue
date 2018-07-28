@@ -11,7 +11,7 @@
       <div class="total">金额</div>
       <div class="handle">操作</div>
     </div>
-    <shopitem></shopitem>
+    <shopitem myProps="mypropssssss"></shopitem>
     <div class="total">
       {{total}}
     </div>

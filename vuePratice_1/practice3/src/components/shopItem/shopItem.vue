@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div>{{myProps}}</div>
         <div v-for="(item,i) in shopItem" :key="item.name" class="container">
             <div class="title">
                 <input @change="selectItemAll(i)" type="checkbox" v-model="item.selected">
@@ -52,6 +53,7 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 export default {
+    props:['myProps'],
     data() {
         return {}
     },
