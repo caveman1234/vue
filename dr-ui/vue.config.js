@@ -6,15 +6,15 @@ module.exports = {
   outputDir: "dist",
   assetsDir: "src",
   pages: {
-    index: {
-      entry: "src/main.js",
-      template: "public/index.html",
-      filename: "index.html"
-    },
     index1: {
-      entry: "src/main.js",
-      template: "public/page1/index.html",
-      filename: "page1/index1.html"
+      entry: "src/pages/page1/entry.js",
+      template: "src/pages/page1/index.html",
+      filename: "pages/page1/index.html"
+    },
+    index2: {
+      entry: "src/pages/page2/entry.js",
+      template: "src/pages/page2/index.html",
+      filename: "pages/page2/index.html"
     },
   },
   lintOnSave: true,
