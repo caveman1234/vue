@@ -1,8 +1,8 @@
 var vm = new Vue({
-	el:'#app',
+	// el:'#app',
 	data(){
 		return{
-			msg:'msg----'
+			msg:'msg----999'
 		}
 	},
 	methods:{
@@ -11,11 +11,14 @@ var vm = new Vue({
 		}
 	}
 });
+vm.$on("ev",function(a){
+	this.msg += "1"
+});
 var vm1 = new Vue({
 	el:'#app1',
 	data(){
 		return{
-			msg:'app1----'
+			msg:vm.msg
 		}
 	},
 	methods:{
@@ -24,3 +27,29 @@ var vm1 = new Vue({
 		}
 	}
 });
+
+
+
+
+
+
+
+var a = Vue.extend({
+	name:"dddddd",
+	template:'<p>ddddddd</p>',
+	data(){
+		return {
+			a:1
+		}
+	}
+})
+var b = new a();
+var res = Vue.compile('<div><span>{{ msg }}</span></div>')
+
+new Vue({
+  data: {
+    msg: 'hello'
+  },
+  render: res.render,
+  staticRenderFns: res.staticRenderFns
+})
