@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Element from 'element-ui'
+// import "@/styles/test.scss"
+import "./element-variables.scss"
+
+Vue.use(Element)
 
 Vue.config.productionTip = false
 
