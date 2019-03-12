@@ -14,15 +14,22 @@
         defaultValue="value1"
         :disabled="false"
         :dataSource="options"
-        :multiple="true"
+        :multiple="false"
       />
+    </div>
+    <div>
+      <RadioExt
+        v-model="busiData.radioValue"
+        :dataSource="[{label:'选项一',value:'1'},{label:'选项二',value:'2'}]"
+        @change="selectExtChange"
+      ></RadioExt>
     </div>
 
   </div>
 </template>
 <script>
-import Vue from "vue";
 import SelectExt from "./commonComps/SelectExt.vue";
+import RadioExt from "./commonComps/RadioExt.vue";
 var options = [
   {label:"label1",value:"value1",code:"code1",name:"name1"},
   {label:"label2",value:"value2",code:"code2",name:"name2"},
@@ -31,14 +38,15 @@ var options = [
 ];
 export default {
   name:"CompContainer",
-  components:{SelectExt},
+  components:{SelectExt,RadioExt},
   data(){
     return{
       busiData:{
         selectExt:"value2",
         name:"",
         code:"",
-        value:""
+        value:"",
+        radioValue:"2"
       },
       options:options
     }

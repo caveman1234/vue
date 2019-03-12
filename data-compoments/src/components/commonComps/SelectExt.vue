@@ -38,12 +38,15 @@ export default {
   data(){
     return {
       selectedValue:"",
-      selectedValue1:"",
       options:[]
     }
   },
   methods:{
     selectExtChange(value){
+      this.setValue(value);
+    },
+    setValue(value){
+      this.selectedValue = value;
       var selectedObj = this.options.find(v => v.value === value);
       if(!this.multiple){
         if(!selectedObj) throw new Error("在options中::\n"+ JSON.stringify(this.options,null,2) +"\n无对应的value值::" + value);
@@ -54,11 +57,7 @@ export default {
         this.emitRelativeFields(value);
       }
     },
-    setSelectValue(value){
-      this.selectedValue = value;
-      this.selectExtChange(value);
-    },
-    //带出字段emit
+    //带出相关联的字段
     emitRelativeFields(value){
       var selectedObj = this.options.find(v => v.value === value);
       var relative = this.relative;
@@ -69,10 +68,11 @@ export default {
   },
   watch:{
     value(value){
+      if(value === this.selectedValue) return;
       if(this.multiple){
         this.selectedValue = value.split(",").filter(Boolean);
       }else{
-        this.selectedValue = value;
+        this.setValue(value);
       }
     }
   },
@@ -93,15 +93,15 @@ export default {
         });
         if(this.multiple){
           if(this.value){
-            this.setSelectValue(this.value.split(",").filter(Boolean));
+            this.setValue(this.value.split(",").filter(Boolean));
           }else{
-            this.setSelectValue(this.defaultValue.split(",").filter(Boolean));
+            this.setValue(this.defaultValue.split(",").filter(Boolean));
           }
         }else{
           if(this.value){
-            this.setSelectValue(this.value);
+            this.setValue(this.value);
           }else{
-            this.setSelectValue(this.defaultValue);
+            this.setValue(this.defaultValue);
           }
         }
       },200);
@@ -109,15 +109,15 @@ export default {
       this.options = this.dataSource;
       if(this.multiple){
         if(this.value){
-          this.setSelectValue(this.value.split(",").filter(Boolean));
+          this.setValue(this.value.split(",").filter(Boolean));
         }else{
-          this.setSelectValue(this.defaultValue.split(",").filter(Boolean));
+          this.setValue(this.defaultValue.split(",").filter(Boolean));
         }
       }else{
         if(this.value){
-          this.setSelectValue(this.value);
+          this.setValue(this.value);
         }else{
-          this.setSelectValue(this.defaultValue);
+          this.setValue(this.defaultValue);
         }
       }
     }
